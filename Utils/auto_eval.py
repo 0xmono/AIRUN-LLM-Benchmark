@@ -10,6 +10,8 @@ load_dotenv()
 
 sys.path.append(os.getenv('AUTO_LLM_EVAL_PATH'))
 from evaluator import evaluate_scenario
+# from ollama_adapter import get_ollama_model - in case of evluation with Ollama
+from llamacpp_server import LlamaServerWrapper
 
 results_path = Path(os.getenv('RESULTS_REPO_PATH')).resolve()
 criteria_path = Path(__file__).resolve().parent.parent / 'Scenarios' / 'Criteria'
@@ -58,9 +60,22 @@ def extract_content(file_path):
         return None
 
 
-def main(model_name, language="JS"):
+def main(model_name, evaluation_model_name="gpt-4o", grading_model_name="gpt-4o", language="JS"):
     """Main function to evaluate the scenarios."""
-    gpt_4_omni = get_model()
+
+    llama_server: LlamaServerWrapper = None
+    evaluation_model: ChatOpenAI = None
+    grading_model: ChatOpenAI = None
+
+    if evaluation_model_name == "gpt-4o":
+        evaluation_model = get_model()
+        grading_model = evaluation_model
+    else:
+        models_dir = os.environ["LLAMA_SERVER_MODELS_PATH"]
+        eval_model_path = os.path.join(models_dir, "qwq-32b-q4_k_m.gguf")
+        llama_server = LlamaServerWrapper(model_path=eval_model_path).start()
+        evaluation_model = llama_server.create_llm(temperature=0)
+
     grading_report = []
 
     base_path = results_path / "Output" / model_name / language
@@ -92,7 +107,7 @@ def main(model_name, language="JS"):
                 output = extract_content(category_path / f'{category_name}_report_1.md')
 
                 (accuracy, completeness) = evaluate_scenario(
-                    category_path, output, category_criteria_path, gpt_4_omni
+                    category_path, output, category_criteria_path, evaluation_model, grading_model
                 )
 
                 accuracy_data = accuracy.to_data_frame("accuracy")
@@ -108,6 +123,8 @@ def main(model_name, language="JS"):
     df.to_csv(summary_path, index=False)
     save_grading_report(report_path, grading_report)
 
+    if llama_server is not None:
+        llama_server.stop()
 
 if __name__ == "__main__":
     main('ChatGPT4o_august_0509', 'JS')
