@@ -5,6 +5,7 @@ from typing import List, Dict, Literal
 from pydantic import BaseModel
 from Utils.llm.config import API, Model, temperature
 from Utils.llm.bedrock import request_bedrock_data
+from Utils.llm.ollama_api import request_ollama_data
 
 
 class APIException(Exception):
@@ -221,6 +222,9 @@ def ask_model(messages: List[Message], system_prompt: str, model: Model, attempt
                 data = request_claude_data(system_prompt, messages, model)
             case Model.AmazonNovaPro:
                 data = request_bedrock_data(system_prompt, messages, model)
+            case (Model.Ollama_Qwen_2_5 | Model.Ollama_Qwen_2_5_14b |
+                Model.Ollama_Qwen_Coder_2_5_14b | Model.Ollama_Phi_4 | Model.Ollama_Gemma3_12b):
+                data = request_ollama_data(system_prompt, messages, model)
             case _:
                 data = request_openai_format_data(system_prompt, messages, model)
 

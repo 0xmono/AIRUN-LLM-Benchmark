@@ -22,6 +22,11 @@ def get_gcp_access_token():
 
 
 class Model:
+    Ollama_Qwen_2_5 = "_ollama_qwen_2_5"
+    Ollama_Qwen_2_5_14b = "_ollama_qwen_2_5_14b"
+    Ollama_Qwen_Coder_2_5_14b = "_ollama_qwen_coder_2_5_14b"
+    Ollama_Phi_4 = "_ollama_phi_4"
+    Ollama_Gemma3_12b = "_ollama_gemma3_12b"
     Gemini = "Gemini1_0"
     GPT4 = "GPT4_Turbo"
     GeminiPro = "Gemini1_5"
