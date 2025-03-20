@@ -1,0 +1,11 @@
+{
+  "code_analysis": {
+    "EvaluateCodeQuality.txt": ["CommonGameInstance", "ReplaySystem"]
+  },
+  "code_generation": {
+    "GenerateImplementation.txt": ["CheatManager", "CharacterMovementComponent"]
+  },
+  "code_documentation": {
+    "AddCodeComments.txt": ["DevelopmentStatics", "TeamCreationComponent"]
+  }
+}

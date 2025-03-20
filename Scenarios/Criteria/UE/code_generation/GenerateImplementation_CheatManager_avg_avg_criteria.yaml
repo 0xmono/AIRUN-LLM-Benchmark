@@ -1,0 +1,43 @@
+evaluation_steps:
+  accuracy:
+    - Verify that all functions and properties from the header file are properly implemented in the source file.
+    - Check if proper Unreal Engine memory management patterns are used (UPROPERTY, UFUNCTION macros, etc.).
+    - Ensure all UE-specific lifetime management is implemented correctly (BeginPlay, EndPlay, Tick functions, etc.).
+    - Check for proper usage of Unreal's garbage collection system and smart pointers (TSharedPtr, TWeakPtr, etc.).
+    - Verify correct implementation of Unreal's delegate system where applicable.
+    - Validate accurate implementation of UObject serialization if required (GetLifetimeReplicatedProps, PostLoad, etc.).
+    - Ensure that proper error handling is implemented, particularly for UE-specific operations.
+    - Check if Unreal Engine coding standards are followed consistently.
+    - Verify that networking code properly handles client/server communication if applicable.
+    - Ensure that any Blueprint-exposed functionality is correctly marked and implemented.
+    - Check if appropriate comments are included following Unreal Engine documentation standards.
+    - Verify that UE-specific optimization techniques are applied where relevant.
+    - Ensure that async operations are handled correctly using UE's task graph or other appropriate mechanisms.
+    - Check for proper implementation of UE's component system if the class uses components.
+    - Verify that any engine callbacks are properly bound and unbound to prevent memory leaks.
+
+  completeness:
+    - Check if the code uses consistent naming conventions following Unreal Engine standards (PascalCase for classes, camelCase for variables).
+    - Identify functions that violate the single responsibility principle and suggest breaking them into smaller, focused functions.
+    - Look for complex conditional statements and suggest refactoring them for improved readability.
+    - Identify any unclear or ambiguous variable names and suggest more descriptive alternatives following UE conventions.
+    - Check for deeply nested code blocks and suggest flattening techniques appropriate for Unreal Engine.
+    - Identify hardcoded values that should be exposed as UPROPERTY() variables for designers to tweak in the editor.
+    - Look for repeated code patterns and suggest refactoring them into reusable UE-friendly helper functions.
+    - Ensure proper use of Unreal's event system instead of polling where appropriate.
+    - Check if the code properly separates logic into appropriate UE subsystems (controllers, pawns, game modes, etc.).
+    - Identify any inefficient Unreal-specific operations (like FindComponentByClass in Tick) and suggest optimizations.
+    - Check for proper usage of timers instead of per-frame checks where appropriate.
+    - Identify potential thread safety issues with UE's multi-threaded systems.
+    - Ensure proper use of UE's data structures (TArray, TMap, etc.) with appropriate memory allocators.
+    - Check for proper asset loading/unloading strategies to avoid memory issues.
+    - Verify that UI-related code uses appropriate UMG patterns rather than direct manipulation.
+    - Ensure that any physics operations follow UE best practices for performance.
+    - Check if rendering-related code follows UE's rendering pipeline properly.
+    - Identify any code that might cause hitches or frame rate drops and suggest UE-specific solutions.
+    - Verify proper usage of UE's asset reference system to avoid hard references where inappropriate.
+    - Ensure that the implementation supports both dedicated server and client-server architectures if needed.
+metadata:
+  category: EvaluateCodeQuality_CheatManager_avg_avg
+  experiment: code_generation
+  scenario_id: 103

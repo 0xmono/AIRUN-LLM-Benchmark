@@ -1,0 +1,43 @@
+evaluation_steps:
+  accuracy:
+    - Identify deprecated UE APIs, functions, or patterns and suggest modern alternatives from current engine versions.
+    - Check for proper UPROPERTY() and UFUNCTION() macros usage and suggest correct specifiers if missing or incorrect.
+    - Ensure proper memory management for UObjects, TSharedPtr, and raw pointers with suggestions for improvement.
+    - Verify correct implementation of garbage collection patterns and suggest fixes for potential memory leaks.
+    - Check that delegate bindings are properly cleaned up when objects are destroyed to prevent dangling references.
+    - Ensure proper error handling in asynchronous operations and network code with suggestions for robustness.
+    - Check for consistent code formatting according to Unreal Engine style guide and suggest improvements.
+    - Verify that appropriate unit tests exist for gameplay systems and suggest adding them where missing.
+    - Check that critical gameplay systems are testable and suggest refactoring approaches for untestable code.
+    - Ensure network replication is properly implemented with RPCs used appropriately.
+    - Check for comprehensive header documentation following Unreal's documentation standards.
+    - Identify inconsistent commenting styles and suggest adherence to UE documentation conventions.
+    - Ensure that functions have proper documentation explaining their parameters, return values, and behavior.
+    - Verify that class and property tooltips are used appropriately for editor-exposed elements.
+    - Check if project documentation (README, wiki) adequately explains the purpose and structure of the code.
+
+  completeness:
+    - Check for consistent naming conventions (PascalCase for classes, camelCase for variables, etc.) per UE standards.
+    - Identify monolithic functions that could be broken down into smaller, single-responsibility methods.
+    - Look for complex conditional logic that could be simplified or refactored into state machines or strategy patterns.
+    - Identify unclear variable or function names and suggest more descriptive alternatives following UE conventions.
+    - Identify deeply nested code blocks and suggest flattening techniques appropriate for UE development.
+    - Check for magic numbers or hardcoded strings that should be constants, config variables, or data assets.
+    - Identify repeated code patterns that could be refactored into reusable helper functions or components.
+    - Check if functionality is appropriately split between C++ and Blueprints according to best practices.
+    - Identify tightly coupled systems that should be decoupled using UE's delegate system or interfaces.
+    - Verify adherence to separation of concerns between game subsystems (rendering, input, gameplay, etc.).
+    - Identify inefficient object iterations or queries that could use more appropriate UE containers or algorithms.
+    - Check for performance-heavy operations running on the game thread that could be offloaded to async tasks.
+    - Look for expensive operations in tick functions that could be optimized or reduced in frequency.
+    - Identify redundant calculations or asset loading that could benefit from caching mechanisms.
+    - Check for appropriate LOD strategies and optimization techniques for different platforms.
+    - Verify accessibility features like input remapping, colorblind options, or text scaling are considered.
+    - Ensure UI elements support gamepad navigation and keyboard focus with appropriate visual indicators.
+    - Check for proper handling of different screen resolutions and aspect ratios.
+    - Identify areas where audio cues should complement visual feedback for better accessibility.
+    - Check for scalability with increased map sizes, actor counts, or gameplay complexity.
+metadata:
+  category: EvaluateCodeQuality_CommonGameInstance_low_avg
+  experiment: code_analysis
+  scenario_id: 101

@@ -1,0 +1,41 @@
+evaluation_steps:
+  accuracy:
+    - Verify that all functions declared in the header file are properly implemented in the source file with matching signatures.
+    - Check that all UPROPERTY and UFUNCTION macros are preserved with identical parameters as in the header.
+    - Ensure Unreal Engine lifecycle methods (BeginPlay, EndPlay, Tick, etc.) are implemented with proper Super calls.
+    - Verify correct implementation of virtual functions declared in the header file.
+    - Check proper initialization of member variables in constructor, especially those marked with UPROPERTY.
+    - Ensure proper garbage collection and memory management patterns are implemented.
+    - Validate that delegate bindings and unbindings are properly paired in appropriate lifecycle methods.
+    - Check if network replication functions are correctly implemented when indicated in the header.
+    - Verify that any declared Blueprint-exposed functionality is properly implemented according to UE patterns.
+    - Ensure that component initialization and registration follows UE-specific patterns.
+    - Check if return values and error handling are consistently implemented for all functions.
+    - Verify that asynchronous operations use appropriate UE mechanisms (TaskGraph, Timers, etc.).
+    - Ensure that any serialization functions declared in the header are properly implemented.
+    - Validate correct implementation of any interface methods declared in the header.
+    - Check that overridden UObject methods follow expected UE patterns.
+
+  completeness:
+    - Ensure the implementation follows Unreal Engine coding standards and naming conventions.
+    - Check that all functionality implied by function names and comments in the header is fully implemented.
+    - Verify that appropriate error checking and validation is included for parameters and operations.
+    - Ensure that all edge cases mentioned or implied in the header are handled in the implementation.
+    - Check that performance considerations mentioned in the header are addressed in the implementation.
+    - Verify that the implementation preserves const-correctness from the header declarations.
+    - Ensure that the implementation follows thread-safety requirements implied by the header.
+    - Check that all property accessors follow consistent patterns (getters/setters).
+    - Verify that any Blueprint-related functionality is implemented with proper Blueprint interaction patterns.
+    - Ensure that component lifecycle management aligns with UE best practices.
+    - Check that the implementation properly handles any dependencies mentioned in the header.
+    - Verify that the implementation correctly uses UE-specific data structures (TArray, TMap, etc.).
+    - Ensure that asset loading/unloading is handled efficiently and safely.
+    - Check that the implementation addresses any stated requirements for networking or replication.
+    - Verify that the implementation includes appropriate usage of UE logging and debugging tools.
+    - Ensure that any functionality requiring cleanup has proper cleanup implemented.
+    - Check that the implementation follows any specific design patterns indicated in the header.
+    - Verify that the implementation is optimized appropriately for the intended use case.
+metadata:
+  category: AddCodeComments_DevelopmentStatics_avg_avg
+  experiment: code_documentation
+  scenario_id: 106

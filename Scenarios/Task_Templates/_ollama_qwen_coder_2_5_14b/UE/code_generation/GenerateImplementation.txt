@@ -1,0 +1,15 @@
+Your task is to implement a component in Unreal Engine based on a provided header file.
+
+<place code here>
+
+When completing the task, ensure to adhere to the following instructions:
+- Implement all methods defined in the header file.
+- Follow Unreal Engine coding standards and best practices.
+- Use appropriate Unreal Engine data structures and patterns.
+- Ensure proper memory management.
+- Handle edge cases appropriately.
+- Implement any required game logic based on the method signatures.
+- The implemented code should be fully functional and compile without errors.
+- Do not modify the header file, only implement the corresponding .cpp file.
+- The generated code should not contain any TODOs.
+- Simply return the implementation without additional comments.

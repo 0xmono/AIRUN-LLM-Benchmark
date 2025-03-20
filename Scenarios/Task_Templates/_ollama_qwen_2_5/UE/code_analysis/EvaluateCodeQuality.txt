@@ -1,0 +1,23 @@
+I have the following Unreal Engine code that needs review and improvement:
+
+<place code here>
+
+Your task is to analyze the code and suggest enhancements focusing on the following aspects:
+- Readability: Identify unclear parts and suggest clearer alternatives with code examples.
+- Maintainability: Point out non-modular or hard-to-maintain structures and provide modular, maintainable code examples.
+- Performance: Highlight performance bottlenecks, inefficient algorithms, or expensive operations and offer optimized code snippets.
+- Blueprint/C++ Best Practices: Indicate deviations from Unreal Engine best practices and correct them with code examples.
+- Memory Management: Identify potential memory leaks, improper garbage collection usage, or inefficient resource handling with suggested fixes.
+- Networking: If applicable, review network-related code for replication issues, bandwidth optimization, or security concerns.
+- Game Thread Usage: Identify operations that could block the game thread and suggest alternatives (async tasks, threading, etc.)
+- Documentation: If documentation/comments are lacking or unclear, suggest better documentation with examples following UE4/UE5 standards.
+- Scalability: Comment on how well the code would scale with increased game complexity and suggest improvements.
+
+Provide answer in the next format:
+## {Aspect 1}
+### 1. {Name of the Issue}
+{description}
+Example
+```<Code snippet or part of code with issue>```
+Example of fixed issue - if applicable
+```<Code snippet with fixed issue>``` - if applicable

@@ -66,10 +66,9 @@ default_experiments = [
     'solution_documentation',
     'solution_migration',
     'solution_template_generation',
-    'test_generation'
-
-    # 'code_documentation',
-    # 'code_generation',
+    'test_generation',
+    'code_documentation',
+    'code_generation',
     # 'code_translation'
 ]
 

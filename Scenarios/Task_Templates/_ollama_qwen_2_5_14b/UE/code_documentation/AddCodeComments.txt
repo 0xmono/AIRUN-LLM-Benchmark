@@ -1,0 +1,17 @@
+Your task is to add comprehensive comments to an Unreal Engine component implementation.
+
+<place code here>
+
+When completing the task, ensure to adhere to the following instructions:
+- Add clear and descriptive comments to all methods and significant code blocks.
+- Include purpose and functionality explanations for each method.
+- Document parameters, return values, and important side effects.
+- Explain any complex logic or algorithms.
+- Note important Unreal Engine-specific patterns or conventions being used.
+- Highlight any performance considerations or potential edge cases.
+- Use standard comment formats (// for single line, /* */ for multi-line).
+- Add class-level documentation at the top explaining the component's overall purpose.
+- Include any important usage notes or limitations.
+- Ensure comments follow Unreal Engine documentation standards.
+- The comments should make the code more maintainable without changing any functionality.
+- Do not modify the actual code logic, only add comments.

@@ -35,7 +35,15 @@ repo_to_complexity = {
     'JSFToSpringLow': 'low_low',
     'Insurance': 'high_high',
     'AutoInsurance': 'high_avg',
-    'LibrarySensitiveLogs': 'avg_avg'
+    'LibrarySensitiveLogs': 'avg_avg',
+
+    # Unreal Engine
+    'CommonGameInstance': 'low_avg',
+    'ReplaySystem': 'high_avg',
+    'DevelopmentStatics': 'avg_avg',
+    'TeamCreationComponent': 'avg_high',
+    'CharacterMovementComponent': 'high_avg',
+    'CheatManager': 'avg_avg',
 }
 
 repo_to_technology = {
